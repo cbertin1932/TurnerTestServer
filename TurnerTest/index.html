@@ -1,0 +1,62 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope,$http)
+{
+	$scope.titleSearch = "cal";
+	$scope.search = function()
+	{
+		document.getElementById("contents").style.display = "none";
+		$http.get("localhost:1337/"+$scope.titleSearch)
+		.then(function(response){alert(response);$scope.titles = JSON.parse(response)},
+		function(response)
+		{
+			console.log(response.data);
+			console.log(response.status);
+			console.log(response.statusText);
+		});
+	}
+	$scope.selectTitle = function(clickedTitle)
+	{
+		for(var t in $scope.titles)
+		{
+			if(t.TitleId==clickedTitle)
+			{
+				$scope.selectedTitle == clickedTitle;
+			document.getElementById("contents").style.display = "block";
+				return;
+			}
+		}
+	}
+});
+	</script></head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form novalidate>
+			<input type="text" ng-model="titleSearch">
+			<button ng-click="search()">search</button>
+		</form>
+		<div>
+			<div>
+				<div style="background-color:#777;float:left;width:50%;height:80%;overflow-y:auto">1</div>
+					<div ng-repeat="t in titles">
+						<div ng-click="selectTitle(t.TitleId)">
+							<h>{{t.TitleName}}</h> <h style="float:right">{{t.ReleaseYear}}</h>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="background-color:#999;float:right;width:50%;height:80%;overflow-y:auto">
+				<div hidden id="contents">
+					<h>{{selectedTitleTitle.TitleName}}</h>
+					<p>Year:{{selectedTitle.Year}}</p>
+					<p>{{selectedTitle.Type}}:{{selectedTitle.Description}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

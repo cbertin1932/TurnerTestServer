@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TurnerTest", "TurnerTest\TurnerTest.njsproj", "{DF723D32-4F22-40FD-9E39-D9815929EE37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF723D32-4F22-40FD-9E39-D9815929EE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF723D32-4F22-40FD-9E39-D9815929EE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF723D32-4F22-40FD-9E39-D9815929EE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF723D32-4F22-40FD-9E39-D9815929EE37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CC592B3-F4CA-4C32-AF15-58658EA98E68}
+	EndGlobalSection
+EndGlobal
